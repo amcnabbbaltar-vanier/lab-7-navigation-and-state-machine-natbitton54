@@ -1,31 +1,38 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AttackState : IState
 {
-    private AIController aiController;
+    private AIController aIController;
+
     public StateType Type => StateType.Attack;
 
-    public AttackState(AIController aiController){
-        this.aiController = aiController;
+    public AttackState(AIController aIController)
+    {
+        this.aIController = aIController;
     }
 
-    public void Enter(){
-        aiController.Animator.SetBool("isAttacking", true);
-        aiController.Agent.isStopped = true; // stop the ai agent movement
+    public void Enter()
+    {
+        aIController.Animator.SetBool("isAttacking", true);
+        aIController.Agent.isStopped = true;
     }
 
-    public void Execute(){
-        // check if player  is within attack range
-        if(Vector3.Distance(aiController.transform.position, aiController.Player.position) > aiController.AttackRange){
-            // if player moves away, transition back to chase state
-            aiController.StateMachine.TransitionToState(StateType.Chase);
+    public void Execute()
+    {
+        if (Vector3.Distance(aIController.transform.position, aIController.Player.position) > aIController.AttackRange)
+        {
+            aIController.StateMachine.TransitionToState(StateType.Chase);
             return;
         }
     }
 
-    public void Exit(){
-        aiController.Animator.SetBool("isAttacking", true);
-        aiController.Agent.isStopped = false; // resume ai movement
+    public void Exit()
+    {
+        aIController.Animator.SetBool("isAttacking", true);
+        aIController.Agent.isStopped = false;
     }
+
+
 }
