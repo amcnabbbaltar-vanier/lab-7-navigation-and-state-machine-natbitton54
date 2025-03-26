@@ -2694,8 +2694,8 @@ GameObject:
   - component: {fileID: 2114487921}
   - component: {fileID: 2114487925}
   - component: {fileID: 2114487922}
-  - component: {fileID: 2114487926}
   - component: {fileID: 2114487927}
+  - component: {fileID: 2114487928}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: CatEnemy
@@ -2764,29 +2764,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2114487926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114487918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2e7bc94f30dae41b468cb2f71b8876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Waypoints:
-  - {fileID: 1650617719}
-  - {fileID: 468392722}
-  - {fileID: 1552699396}
-  Player: {fileID: 2107106902}
-  SightRange: 10
-  AttackRange: 2
-  PlayerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  currentState: 0
 --- !u!195 &2114487927
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2809,6 +2786,30 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2114487928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114487918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e7bc94f30dae41b468cb2f71b8876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints:
+  - {fileID: 1650617719}
+  - {fileID: 468392722}
+  - {fileID: 1552699396}
+  Player: {fileID: 2107106902}
+  SightRange: 10
+  AttackRange: 2
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  currentState: 0
+  UseLineOfSight: 0
 --- !u!1001 &6489749920732949425
 PrefabInstance:
   m_ObjectHideFlags: 0
